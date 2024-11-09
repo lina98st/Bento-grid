@@ -1,0 +1,70 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@font-face {
+    font-family: 'DMSans';
+    src: url('assets/fonts/static/DMSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+#grid-bento {
+  font-family: 'DMSans';
+  display: grid;
+  margin: 3rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "grid-item-2 grid-item-1 grid-item-3 grid-item-4"
+  "grid-item-5 grid-item-6 grid-item-7 grid-item-8"
+  ". . grid-item-7 grid-item-8";
+  
+  
+}
+
+.grid-item {
+border-radius: 0.3rem;
+margin: 0.3rem;
+padding: 0.2rem;
+color: black;
+background-color: white;
+}
+
+
+.grid-item-1 {
+grid-area: grid-item-1;
+}
+
+.grid-item-2 {
+    grid-area: grid-item-2;
+}
+
+.grid-item-3 {
+    grid-area: grid-item-3;
+}
+
+.grid-item-4 {
+    grid-area: grid-item-4;
+}
+
+.grid-item-5 {
+    grid-area: grid-item-5;
+}
+
+.grid-item-6 {
+    grid-area: grid-item-6;
+}
+
+.grid-item-7 {
+grid-area: grid-item-7;
+}
+
+.grid-item-8 {
+grid-area: grid-item-8;
+}
