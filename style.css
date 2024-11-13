@@ -6,65 +6,208 @@
     src: url('assets/fonts/static/DMSans-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
+}
+
+@font-face {
+    font-family: 'DMSans';
+    src: url('assets/fonts/static/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DMSans';
+    src: url('assets/fonts/static/DMSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    --Purple-1: hsl(254, 88%, 90%);
+    --Purple-2: hsl(256, 67%, 59%);
+    
+    --Yellow-1: hsl(31, 66%, 93%);
+    --Yellow-2: hsl(39, 100%, 71%);
+    
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 7%);
+
+    /* Schriftgrößen */
+    --font-size-large: 34px; /* für große Schrift */
+    --font-size-medium: 25px; /* für mittlere Schrift */
+    --font-size-small: 15px; /* für kleine Schrift */
+}
 
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #f5f5f5;
 }
 
+/*grid container*/
 
 #grid-bento {
   font-family: 'DMSans';
+  font-weight: 500;
   display: grid;
-  margin: 3rem;
+  padding: 0 5rem; 
+  margin: 3rem auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: 
-  "grid-item-7 grid-item-1 grid-item-1 grid-item-4"
-  "grid-item-8 grid-item-2 grid-item-3 grid-item-4"
-  "grid-item-8 grid-item-6 grid-item-5 grid-item-5";
+    "grid-item-7 grid-item-1 grid-item-1 grid-item-4"
+    "grid-item-7 grid-item-1 grid-item-1 grid-item-4"
+    "grid-item-8 grid-item-2 grid-item-3 grid-item-4"
+    "grid-item-8 grid-item-6 grid-item-5 grid-item-5";
   gap: 15px;
+  max-width: 1000px;
+  width: 100%; 
 }
 
+/*basic grid item style*/
 .grid-item {
-border-radius: 0.3rem;
-margin: 0.3rem;
-padding: 0.2rem;
-color: black;
-background-color: white;
+  border-radius: 0.3rem;
+  margin: 0;
+  overflow: hidden; 
+  font-size: var(--font-size-medium); /* Standard ist die große Schrift */
+  color: black;
+  background-color: white;
+  letter-spacing: -0.5px; 
+  line-height: 1.0; 
 }
 
+/*All grid items */
 
 .grid-item-1 {
-grid-area: grid-item-1;
+  grid-area: grid-item-1;
+  background-color: var(--Purple-2);
+  color: var(--White);
+  text-align: center;
+  padding: 2rem 1rem 3rem 1rem; 
+  font-size: var(--font-size-large);
+}
+
+.grid-item-1 img {
+  padding: 1rem 0 0 0 0;
+  margin: 0 auto;
+  position: center;
+  display: block;
 }
 
 .grid-item-2 {
     grid-area: grid-item-2;
+    background-color: var(--White);
+    padding: 1rem 1rem 0 1rem; /* Oben, Rechts, Unten, Links */
 }
 
 .grid-item-3 {
     grid-area: grid-item-3;
+    background-color: var(--Yellow-2);
+    padding: 1rem 1rem 0 1rem; /* Oben, Rechts, Unten, Links */
 }
 
 .grid-item-4 {
     grid-area: grid-item-4;
+    background-color: var(--Purple-1);
+    color: var(--Black);
+    padding: 2rem 1rem 2rem 1rem; /* Oben, Rechts, Unten, Links */
 }
 
 .grid-item-5 {
     grid-area: grid-item-5;
+    background-color: var(--Purple-2);
+    color: var(--White);
+    display: flex; /* Aktiviert Flexbox */
+    align-items: center; /* Zentriert Bild und Text vertikal */
+    padding: 1rem 1rem 0 1rem; /* Oben, Rechts, Unten, Links */
+    grid-column: span 2; 
+}
+
+.grid-item-5 img {
+  margin-right: 10px; /* Abstand zwischen Bild und Text */
 }
 
 .grid-item-6 {
     grid-area: grid-item-6;
+    background-color: var(--White);
+    padding: 1rem 1rem 0 1rem; /* Oben, Rechts, Unten, Links */
 }
 
 .grid-item-7 {
-grid-area: grid-item-7;
+  grid-area: grid-item-7;
+  background-color: var(--Yellow-1);
+  color: var(--Black);
+  padding: 2rem 1rem 0 1rem; /* Oben, Rechts, Unten, Links */
+}
+
+.grid-item-7 {
+  grid-area: grid-item-7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .grid-item-8 {
-grid-area: grid-item-8;
+  grid-area: grid-item-8;
+  background-color: var(--Yellow-2);
+  font-size: 25px;
+  padding: 1rem 1rem 0 1rem; /* Oben, Rechts, Unten, Links */
+  display: flex;
+  flex-direction: column;
+}
+
+/*words in different colors in the middle of text*/
+
+.yellow-word {
+  color: var(--Yellow-2);
+}
+
+.purple-word {
+  color: var(--Purple-2);
+  font-family: 'DMSans';
+  font-style: italic;
+}
+
+.small-font {
+  font-size: var(--font-size-small); /* Kleine Schrift */
+  color: white;
+  font-weight: normal;
+}
+
+.small-font2 {
+  font-size: 15px;
+  color: black;
+  display: block;
+  font-weight: normal;
+  font-style: normal;
+  padding: 0.4rem;
+}
+
+.italic-style-font {
+  font-family: 'DMSans';
+  font-style: italic;
+}
+
+.grid-item-2 img,
+.grid-item-4 img,
+.grid-item-5 img,
+.grid-item-6 img,
+.grid-item-8 img {
+  padding: 0.5rem;
+}
+
+.inner-div {
+  padding: 0.4rem;
+}
+
+.inner-div2 {
+  padding: 1rem 0 1rem 0; /* Oben, Rechts, Unten, Links */
+}
+
+.inner-div3 {
+  padding: 0;
 }
