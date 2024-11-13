@@ -1,5 +1,11 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  margin: 1rem;
+}
+.attribution a {
+   color: hsl(228, 45%, 44%); 
+}
 
 @font-face {
     font-family: 'DMSans';
@@ -37,7 +43,7 @@
     --Black: hsl(0, 0%, 7%);
 
     /* Schriftgrößen */
-    --font-size-large: 34px; /* für große Schrift */
+    --font-size-large: 40px; /* für große Schrift */
     --font-size-medium: 25px; /* für mittlere Schrift */
     --font-size-small: 15px; /* für kleine Schrift */
 }
@@ -53,8 +59,8 @@ body {
   font-weight: 500;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 5 gleich breite Spalten */
-  grid-template-rows: repeat(10, auto); /* 10 automatische Zeilen */
-  gap: 15px; /* Abstand zwischen den Items */
+  grid-template-rows: repeat(10, 1fr); /* 10 automatische Zeilen */
+  gap: 20px; 
   grid-template-areas: 
     "grid-item-7 grid-item-1 grid-item-1 grid-item-4"
     "grid-item-7 grid-item-1 grid-item-1 grid-item-4"
@@ -66,8 +72,9 @@ body {
     "grid-item-8 grid-item-6 grid-item-5 grid-item-5"
     "grid-item-8 grid-item-6 grid-item-5 grid-item-5"
     "grid-item-8 grid-item-6 grid-item-5 grid-item-5";
-    max-width: 1440px;
-    width: 100%;
+    max-width: 1000px;
+    max-height: 800px;
+    width: 90%;
     margin: 3rem auto;
 }
 
@@ -75,11 +82,13 @@ body {
 .grid-item {
   border-radius: 0.3rem;
   overflow: hidden;
-  padding: 1rem;
   background-color: white;
   color: black;
   font-size: var(--font-size-medium);
+  line-height: 0.9;
+  letter-spacing: -0.5px;
 }
+
 
 /* Zuweisung der Grid-Bereiche */
 .grid-item-1 {
@@ -88,22 +97,47 @@ body {
   text-align: center;
   font-size: var(--font-size-large);
   grid-area: grid-item-1;
+  padding: 0.6rem;
+}
+
+.grid-item-1 img {
+  padding: 0.1rem 0.1rem 0 0.1rem;
+}
+
+.grid-item-1 p {
+  padding: 0;
 }
 
 .grid-item-2 {
   background-color: var(--White);
   grid-area: grid-item-2;
+  padding: 1rem;
+}
+
+.grid-item-2 img {
+  padding: 1rem 0 1rem 2rem;
+}
+
+.grid-item-2 span {
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
 }
 
 .grid-item-3 {
   background-color: var(--Yellow-2);
   grid-area: grid-item-3;
+  padding: 1.5rem 1rem 0 1rem;
+}
+
+
+.grid-item-3 img {
+  padding: 2.5rem 0.1rem 0 0.1rem;
 }
 
 .grid-item-4 {
   background-color: var(--Purple-1);
   color: var(--Black);
   grid-area: grid-item-4;
+  padding: 2rem 0 3rem 3rem;
 }
 
 .grid-item-5 {
@@ -113,21 +147,61 @@ body {
   align-items: center;
   justify-content: center;
   grid-area: grid-item-5;
+ 
 }
+
 
 .grid-item-6 {
   background-color: var(--White);
   grid-area: grid-item-6;
+  padding: 1.5rem;
+  font-size: 40px;
+}
+
+.grid-item-6 span {
+  padding: 1rem 0.1rem 1rem 0.1rem;
 }
 
 .grid-item-7 {
-  background-color: var(--Yellow-1);
+  background-color: var(--Yellow-1); /* Hintergrundfarbe */
   grid-area: grid-item-7;
+  display: flex; /* Flexbox für einfache Ausrichtung */
+  flex-direction: column; /* Inhalte untereinander */
+  align-items: center; /* Zentriert horizontal */
+  justify-content: center; /* Zentriert vertikal */
+  padding: 0.4rem 0.4rem;
+  text-align: left;
+  gap: 1rem; /* Abstand zwischen Text und Button */
 }
+
+.grid-item-7 p {
+  margin: 0;
+  font-size: var(--font-size-medium); 
+  color: var(--Black); 
+}
+
+.grid-item-7 .button-container {
+  margin-top: 1rem;
+}
+
+.grid-item-7 .button-image {
+  width: auto; /* Automatische Breite */
+  max-width: 150px; /* Maximale Breite */
+}
+
 
 .grid-item-8 {
   background-color: var(--Yellow-2);
   grid-area: grid-item-8;
+  padding: 1rem;
+}
+
+.grid-item-8 img {
+  padding: 1rem 0 0 0 0;
+}
+
+.grid-item-8 p {
+
 }
 
 /*words in different colors in the middle of text*/
@@ -154,7 +228,7 @@ body {
   display: block;
   font-weight: normal;
   font-style: normal;
-  padding: 0.4rem;
+  padding: 0.5rem;
 }
 
 .italic-style-font {
@@ -162,20 +236,16 @@ body {
   font-style: italic;
 }
 
-/* Responsives Design */
-@media (max-width: 768px) {
+
+
+@media (max-width: 375px) {
   #grid-bento {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "grid-item-7 grid-item-7"
-      "grid-item-1 grid-item-1"
-      "grid-item-8 grid-item-8"
-      "grid-item-2 grid-item-3"
-      "grid-item-4 grid-item-4"
-      "grid-item-6 grid-item-5";
+    display: flex; /* Flexbox aktivieren */
+    flex-direction: column; /* Items untereinander anordnen */
+    gap: 15px; /* Abstand zwischen den Items */
   }
+
   .grid-item {
-    grid-column: span 2;
+    width: 100%; /* Jedes Item füllt die Breite */
   }
 }
