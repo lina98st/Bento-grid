@@ -247,7 +247,6 @@ body {
 }
 
 
-
 @media (max-width: 800px) {
 
   * {
@@ -279,9 +278,41 @@ body {
     width: 100%; 
     height: auto;
   }
+
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto; 
   }
 
+  .grid-item-3 {
+    display: flex;
+    flex-direction: column; /* Text und Bild untereinander */
+    align-items: center; /* Zentriert Text und Bild */
+    text-align: center; /* Zentriert den Text */
+  }
+
+  .grid-item-3 img {
+    padding: 1rem 0 0 ; /* Optimiert Abstand zum Text */
+    max-width: 100%; /* Bild passt sich dem Container an */
+    height: auto;
+  }
+
+  .grid-item-7 p {
+    padding: 0.5rem;
+        }
+
+  .grid-item-8 p {
+  padding: 0.5rem;
+      }
+
+  .grid-item-5 img {
+padding: 0.5rem;
+  }
+
+  .grid-item-4 p {
+padding: 1rem;
+  }
+
+  br {
+    display: none;
 }
