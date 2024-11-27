@@ -95,17 +95,19 @@ body {
   background-color: var(--Purple-2);
   color: var(--White);
   text-align: center;
-  font-size: var(--font-size-large);
+  font-size: 46px;
   grid-area: grid-item-1;
-  padding: 0.6rem;
+  padding: 0.7rem;
 }
 
 .grid-item-1 img {
   padding: 0.1rem 0.1rem 0 0.1rem;
 }
 
+
 .grid-item-1 p {
   padding: 0;
+  margin: 2rem 0 1rem 0;
 }
 
 .grid-item-2 {
@@ -115,12 +117,13 @@ body {
 }
 
 .grid-item-2 img {
-  padding: 1rem 0 1rem 2rem;
+  padding: 0.1rem 0 1rem 2rem;
 }
 
 .grid-item-2 span {
   padding: 0.1rem 0.1rem 0.1rem 0.1rem;
 }
+
 
 .grid-item-3 {
   background-color: var(--Yellow-2);
@@ -137,7 +140,7 @@ body {
   background-color: var(--Purple-1);
   color: var(--Black);
   grid-area: grid-item-4;
-  padding: 2rem 0 3rem 3rem;
+  padding: 2rem 0 3rem 2rem;
 }
 
 .grid-item-5 {
@@ -163,19 +166,21 @@ body {
 }
 
 .grid-item-7 {
-  background-color: var(--Yellow-1); /* Hintergrundfarbe */
+  background-color: var(--Yellow-1); 
   grid-area: grid-item-7;
-  display: flex; /* Flexbox für einfache Ausrichtung */
-  flex-direction: column; /* Inhalte untereinander */
-  align-items: center; /* Zentriert horizontal */
-  justify-content: center; /* Zentriert vertikal */
-  padding: 0.4rem 0.4rem;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 0;
   text-align: left;
-  gap: 1rem; /* Abstand zwischen Text und Button */
+  gap: 0.6rem; 
 }
+
 
 .grid-item-7 p {
   margin: 0;
+  padding: 0;
   font-size: var(--font-size-medium); 
   color: var(--Black); 
 }
@@ -184,11 +189,16 @@ body {
   margin-top: 1rem;
 }
 
+
 .grid-item-7 .button-image {
-  width: auto; /* Automatische Breite */
-  max-width: 150px; /* Maximale Breite */
+  width: auto; 
+  max-width: 150px; 
 }
 
+.grid-item-7 .button-image {
+  width: auto; 
+  max-width: 150px; 
+}
 
 .grid-item-8 {
   background-color: var(--Yellow-2);
@@ -239,6 +249,15 @@ body {
 
 
 @media (max-width: 375px) {
+
+  html, body {
+    height: 100%; /* Nimmt die volle Höhe des Viewports ein */
+    margin: 0; /* Entfernt Standard-Margins */
+    padding: 0; /* Entfernt Standard-Paddings */
+    box-sizing: border-box; /* Padding und Border einrechnen */
+  }
+  
+
   #grid-bento {
     display: flex; /* Flexbox aktivieren */
     flex-direction: column; /* Items untereinander anordnen */
@@ -247,5 +266,12 @@ body {
 
   .grid-item {
     width: 100%; /* Jedes Item füllt die Breite */
+    height: auto;
   }
+  .grid-container {
+    grid-template-columns: 1fr; /* Eine Spalte */
+    grid-template-rows: auto; /* Automatische Höhe */
+  }
+
+  
 }
