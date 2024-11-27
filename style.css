@@ -248,32 +248,40 @@ body {
 
 
 
-@media (max-width: 375px) {
+@media (max-width: 800px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+}
+
 
   html, body {
-    height: 100%; /* Nimmt die volle Höhe des Viewports ein */
-    margin: 0; /* Entfernt Standard-Margins */
-    padding: 0; /* Entfernt Standard-Paddings */
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
     box-sizing: border-box; /* Padding und Border einrechnen */
+    overflow-x: hidden;
   }
   
   #grid-bento {
-    display: flex; /* Flexbox aktivieren */
+    display: flex; 
     flex-direction: column; /* Items untereinander anordnen */
-    gap: 15px; /* Abstand zwischen den Items */
-    max-width: 100%; /* Entferne Begrenzung */
-    max-height: none; /* Begrenzung der Höhe entfernen */
-    width: 100%; /* Passt sich dem Viewport an */
+    gap: 15px; 
+    max-width: 100%; 
+    max-height: none;
+    width: 90%; 
+    margin: 1rem 1rem;
   }
 
 
   .grid-item {
-    width: 100%; /* Jedes Item füllt die Breite */
+    width: 100%; 
     height: auto;
   }
   .grid-container {
-    grid-template-columns: 1fr; /* Eine Spalte */
-    grid-template-rows: auto; /* Automatische Höhe */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; 
   }
 
   
