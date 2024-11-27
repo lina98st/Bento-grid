@@ -257,12 +257,15 @@ body {
     box-sizing: border-box; /* Padding und Border einrechnen */
   }
   
-
   #grid-bento {
     display: flex; /* Flexbox aktivieren */
     flex-direction: column; /* Items untereinander anordnen */
     gap: 15px; /* Abstand zwischen den Items */
+    max-width: 100%; /* Entferne Begrenzung */
+    max-height: none; /* Begrenzung der Höhe entfernen */
+    width: 100%; /* Passt sich dem Viewport an */
   }
+
 
   .grid-item {
     width: 100%; /* Jedes Item füllt die Breite */
